@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ProtectedComponent = ({ setAmount, setFinish, finish }) => {
+const ProtectedComponent = ({ amount, added, setAdded, setAmount, setFinish, finish }) => {
   const [password, setPassword] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
@@ -11,8 +11,9 @@ const ProtectedComponent = ({ setAmount, setFinish, finish }) => {
   };
 
   const handleChange = () => {
-    setAmount(finish);
-    setFinish(finish);
+    setAdded(0) 
+    setAmount((added * 1) + (amount * 1) - finish);
+    setFinish(0)
   };
 
   const handleSubmit = (e) => {
