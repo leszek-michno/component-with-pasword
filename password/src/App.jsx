@@ -10,15 +10,20 @@ function App() {
   const [added, setAdded] = useLocalStorage('added', '');
 
   return (
-    <div>
+    <>
+    <div className='admin'>
+      <p>Panel administratora</p>
       <ProtectedComponent 
       added={added} 
       setAdded={setAdded} 
       amount={amount} 
       setAmount={setAmount} 
       setFinish={setFinish} 
-      finish={finish} />
-      <br />
+      finish={finish}
+      />
+      </div>
+      <div className='comp'>
+        <h3>Sprzedaż towaru</h3>
       <MyComponent
       added={added}
       setAdded={setAdded} 
@@ -27,6 +32,7 @@ function App() {
       finish={finish} 
       setFinish={setFinish} />
     </div>
+    </>
   );
 }
 

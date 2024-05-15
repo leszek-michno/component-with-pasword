@@ -1,3 +1,4 @@
+import './App.css'
 import { useState } from "react";
 
 const ProtectedComponent = ({ amount, added, setAdded, setAmount, setFinish, finish }) => {
@@ -32,7 +33,7 @@ const ProtectedComponent = ({ amount, added, setAdded, setAmount, setFinish, fin
 
   if (isAuthenticated) {
     return (
-      <div>
+      <div className='protect'>
         <button onClick={handleChange}>Uaktualnij</button>
         <br />
         <button onClick={handleLogout}>Zamknij</button>

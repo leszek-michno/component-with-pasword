@@ -1,36 +1,41 @@
-
-
-export function MyComponent({ amount, setAmount, finish, setFinish, added, setAdded})
-
-
- {
-  return (
-    <>
-    dostawa: 
+import './App.css'
+export function MyComponent({
+  amount,
+  setAmount,
+  finish,
+  setFinish,
+  added,
+  setAdded,
+}) {
+  return (  
+    <div>
+      <span> <strong>Litovel Premium</strong> </span>
+      <span>dostawa:</span>
       <input
+        type="number"
         value={added}
         onChange={(e) => {
           setAdded(e.target.value);
         }}
-      /> 
-      {''} stan początkowy: 
+      />
+      <span>stan początkowy:</span>
       <input
+        type="number"
         value={amount}
         onChange={(e) => {
           setAmount(e.target.value);
         }}
-      /> 
-      {''} sprzedaż: 
+      />
+      <span>sprzedaż:</span>
       <input
+        type="number"
         value={finish}
         onChange={(e) => {
           setFinish(e.target.value);
         }}
       />
-      <p>Jest: {(added * 1) + (amount * 1) - finish}</p>
-      <h1>Kwota: {finish * 13 } zł</h1>
-    </>
+      <span>stan końcowy: {added * 1 + amount * 1 - finish}</span>
+      <span>przychód: {finish * 13} zł</span>
+    </div>
   );
 }
-
-      
